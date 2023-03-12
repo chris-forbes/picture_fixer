@@ -25,7 +25,7 @@ if __name__ == '__main__':
                       type=float, default=4.0, dest='control_factor')
     argz = args.parse_args()
 
-    image_path = './Input/before.png'
+    image_path = argz.image_path
     if os.path.exists(image_path):
         image_service = ImageCorrectionService(image_path, control_factor=argz.control_factor)
         image_service.correct_colour_balance(argz.colour_max, enable_processing_display=argz.colour_preview)
